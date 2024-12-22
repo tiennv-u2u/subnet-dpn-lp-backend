@@ -1,0 +1,23 @@
+[package]
+authors = ["tiennv-u2u"]
+name = "subnet-dpn-lp-backend"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "lp-backend"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.94"
+axum = "0.7.9"
+axum-server = "0.7.1"
+env_logger = "0.11.6"
+log = "0.4.22"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio-native-tls", "chrono"]}
+static_init = "1.0"
+tokio = {version = "1.42.0", features = ["full"]}
+tower = {version = "0.5.2", features = ["timeout"]}
+tower-http = {version = "0.6.2", features = ["trace"]}
